@@ -1,5 +1,7 @@
 const Discord = require("discord.js");
-const config = require("../config.json");
+const config = require("../serverconfig.json");
+const errors = require("../utils/errors.js");
+
 const red = config.red;
 const green = config.green;
 const orange = config.orange;
@@ -26,8 +28,9 @@ module.exports.run = async (bot, message, args) => {
     .addField("Reason", rreason);
 
     let reportschannel = message.guild.channels.find(`name`, "reports");
-    console.log(reportschannels);
+
     if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
+  
     reportschannel.send(reportEmbed);
 
 }

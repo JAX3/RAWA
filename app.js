@@ -2,6 +2,7 @@ const fs = require("fs");
 const Discord = require('discord.js');
 const client = new Discord.Client({disableEveryone: true});
 const config = require ("./config.json");
+const server = require("../serverconfig.json");
 client.login(config.token);
 let cooldown = new Set();
 let cdseconds = 5;
@@ -39,7 +40,7 @@ client.on("ready",async() => {
 
 // welcome new user
 	client.on('guildMemberAdd',async (member) => {
-		let  channel =  client.channels.get(config.welcome);
+		let  channel =  client.channels.get(server.welcome);
 		
 		channel.send(`Welcome ${member}!, Please Read the <#438395434524999680> first, and have fun.<:Smiley:480000983263608843>`);
 		console.log(`${member.user.username} has joined`);
@@ -80,7 +81,7 @@ function addrole(roleName,  message)
 
 
 	message.member.addRole(role.id);
-	message.channel.send('Do',+ config.prefix + ('roles \n for the role list.'));
+	
 	message.reply( roleName + ` Added`);
 	console.log("role found");
 	return;
