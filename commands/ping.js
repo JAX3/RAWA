@@ -2,7 +2,7 @@
 const Discord = require("discord.js");//require discord.js from the module folder
 const config = require("../serverconfig.json")//requireing the serverconfig file
 module.exports.run = async (client, message, args) => {
-  var time = 5000;//time 5 seconds 
+  var time = 4000;//time 4 seconds 
       let pingEmbed = new Discord.RichEmbed()
       .setTitle("Pong")
       .setColor(config.red)//embed colour.
