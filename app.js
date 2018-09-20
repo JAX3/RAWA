@@ -30,7 +30,7 @@ fs.readdir("./commands/", (err, files) => {
 //on ready stuff.
 client.on("ready",async() => {
 
-	client.user.setUsername("RAWI");
+	//client.user.setUsername("RAWI");
 	client.user.setPresence({ game: { name:" RAWA Bot",type: "WATCHING"}  });
 
 
